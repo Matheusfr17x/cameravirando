@@ -58,9 +58,7 @@ async function init() {
   }
  j++;
  } 
- else{
-  window.location.reload(true);
- }
+ 
 }
 
 
