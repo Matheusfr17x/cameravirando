@@ -6,7 +6,7 @@ const btnChangeCamera = document.querySelector("#btnChangeCamera");
 const URL = "https://teachablemachine.withgoogle.com/models/CCaZVIUPA/";
 
 let model, webcam, labelContainer, maxPredictions;
- j=0;
+ 
 let useFrontCamera;
 
 // troca de câmera
@@ -14,7 +14,6 @@ btnChangeCamera.addEventListener("click", function () {
   useFrontCamera = !useFrontCamera;
   init();
  if(useFrontCamera = !useFrontCamera){
-  j=0;
   window.location.reload();
  }
 });
@@ -42,17 +41,16 @@ async function init() {
   window.requestAnimationFrame(loop);
 
   // acrescenta elementos ao DOM
-  if(j==0){
+  
   document.getElementById("webcam-container").appendChild(webcam.canvas);
   labelContainer = document.getElementById("label-container");
   for (let i = 0; i < maxPredictions; i++) {
     // e rótulos de classe
     labelContainer.appendChild(document.createElement("div"));
     window.location.reload();
-    j=1;
+
   }
   }
-}
 
 async function loop() {
   webcam.update(); // atualiza o quadro da webcam
