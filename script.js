@@ -15,6 +15,7 @@ btnChangeCamera.addEventListener("click", function () {
   init();
  if(useFrontCamera = !useFrontCamera){
   j=0;
+  window.location.reload();
  }
 });
 
@@ -47,6 +48,7 @@ async function init() {
   for (let i = 0; i < maxPredictions; i++) {
     // e rótulos de classe
     labelContainer.appendChild(document.createElement("div"));
+    window.location.reload();
     j=1;
   }
   }
