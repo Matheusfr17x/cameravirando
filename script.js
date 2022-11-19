@@ -6,13 +6,13 @@ const btnChangeCamera = document.querySelector("#btnChangeCamera");
 const URL = "https://teachablemachine.withgoogle.com/models/CCaZVIUPA/";
 
 let model, webcam, labelContainer, maxPredictions;
-
+ j=0;
 let useFrontCamera;
 
 // troca de câmera
 btnChangeCamera.addEventListener("click", function () {
   useFrontCamera = !useFrontCamera;
-  init();
+
 });
 
 // Carrega o modelo de imagem e configura a webcam
@@ -31,17 +31,21 @@ async function init() {
   webcam = new tmImage.Webcam(300, 300, useFrontCamera); //largura, altura, flip
   if (useFrontCamera === false){
     await webcam.setup({ facingMode: "environment" });
+   
   }
   await webcam.setup(); // solicita acesso à webcam
   await webcam.play();
   window.requestAnimationFrame(loop);
 
   // acrescenta elementos ao DOM
+  if(j==0){
   document.getElementById("webcam-container").appendChild(webcam.canvas);
   labelContainer = document.getElementById("label-container");
   for (let i = 0; i < maxPredictions; i++) {
     // e rótulos de classe
     labelContainer.appendChild(document.createElement("div"));
+    j=1;
+  }
   }
 }
 
