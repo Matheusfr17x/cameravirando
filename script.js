@@ -16,6 +16,10 @@ if (j==1) {
 }
 btnChangeCamera.addEventListener("click", function () {
   useFrontCamera = !useFrontCamera;
+  if (useFrontCamera=!useFrontCamera) {
+    j=0;
+    j==0;
+  }
   init();
 
 });
