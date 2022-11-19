@@ -8,14 +8,16 @@ const URL = "https://teachablemachine.withgoogle.com/models/CCaZVIUPA/";
 let model, webcam, labelContainer, maxPredictions;
  
 let useFrontCamera;
+j=0;
 
 // troca de câmera
+if (j==1) {
+  window.location.reload(true);
+}
 btnChangeCamera.addEventListener("click", function () {
   useFrontCamera = !useFrontCamera;
   init();
- if(useFrontCamera = !useFrontCamera){
-  window.location.reload();
- }
+
 });
 
 // Carrega o modelo de imagem e configura a webcam
@@ -41,16 +43,23 @@ async function init() {
   window.requestAnimationFrame(loop);
 
   // acrescenta elementos ao DOM
-  
+  if(j==0){
   document.getElementById("webcam-container").appendChild(webcam.canvas);
   labelContainer = document.getElementById("label-container");
   for (let i = 0; i < maxPredictions; i++) {
     // e rótulos de classe
     labelContainer.appendChild(document.createElement("div"));
-    window.location.reload();
+    //
+   
+  }
+ j++;
+ } 
+ else{
+  window.location.reload(true);
+ }
+}
 
-  }
-  }
+
 
 async function loop() {
   webcam.update(); // atualiza o quadro da webcam
