@@ -45,10 +45,7 @@ async function init() {
 
     labelContainer.appendChild(document.createElement("div"));
   }
-  if (j==2) {
-    window.location.reload(true);
-    
-  }
+  
  
 }
 
