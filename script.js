@@ -11,15 +11,9 @@ let useFrontCamera;
 j=0;
 
 // troca de câmera
-if (j>=1) {
-  window.location.reload(true);
-}
+
 btnChangeCamera.addEventListener("click", function () {
   useFrontCamera = !useFrontCamera;
-  if (useFrontCamera=!useFrontCamera) {
-    j=0;
-    j==0;
-  }
   init();
 
 });
@@ -53,13 +47,14 @@ async function init() {
   for (let i = 0; i < maxPredictions; i++) {
     // e rótulos de classe
     labelContainer.appendChild(document.createElement("div"));
-    //
-   
   }
- j++;
+  j=j+1;
+}
+ else{
+  window.location.reload(true);
+ }
  } 
  
-}
 
 
 
