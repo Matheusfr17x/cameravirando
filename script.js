@@ -37,16 +37,19 @@ async function init() {
   window.requestAnimationFrame(loop);
 
   // acrescenta elementos ao DOM
+  if(j==0){
   document.getElementById("webcam-container").appendChild(webcam.canvas);
   labelContainer = document.getElementById("label-container");
-  j++;
   for (let i = 0; i < maxPredictions; i++) {
     // e rótulos de classe
 
     labelContainer.appendChild(document.createElement("div"));
   }
-  
- 
+ j=1;
+}
+if(j==4){
+  window.location.reload(true);
+}
 }
 
 async function loop() {
