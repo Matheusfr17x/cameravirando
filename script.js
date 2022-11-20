@@ -39,16 +39,17 @@ async function init() {
   // acrescenta elementos ao DOM
   document.getElementById("webcam-container").appendChild(webcam.canvas);
   labelContainer = document.getElementById("label-container");
-  j=1;
+  j++;
   for (let i = 0; i < maxPredictions; i++) {
     // e rótulos de classe
 
     labelContainer.appendChild(document.createElement("div"));
   }
-  if (j>1) {
+  if (j==2) {
     window.location.reload(true);
     
   }
+ 
 }
 
 async function loop() {
