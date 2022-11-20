@@ -11,7 +11,7 @@ let useFrontCamera;
 j=0;
 
 // troca de câmera
-if (j==1) {
+if (j>=1) {
   window.location.reload(true);
 }
 btnChangeCamera.addEventListener("click", function () {
